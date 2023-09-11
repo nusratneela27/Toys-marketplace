@@ -1,0 +1,26 @@
+.loginBanner {
+    background: url(../src/assets/loginBanner.avif);
+    background-position: top bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.addToyBanner {
+    background: linear-gradient(90deg, #474646 0%, rgba(241, 91, 34, 0) 100%), url(../src/assets/gallery/add-a-toy.avif);
+    background-position: top bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.borders {
+    border: none;
+}
+
+@media screen and (max-width:576px) {
+    .photo {
+        height: 200px;
+        width: 350px;
+    }
+}
