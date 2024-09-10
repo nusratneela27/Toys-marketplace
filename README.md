@@ -1,8 +1,5 @@
 ### projects name
-- toys projects (kidol)
-
-### Live Link 
-- [https://toys-project-3b9a3.web.app]
+- [Kidol](https://toys-project-3b9a3.web.app)
 
 ### Features
 - It has login Registration system from firebase.

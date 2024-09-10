@@ -13,50 +13,63 @@ import SingleDetails from "../pages/SingleDetails/SingleDetails";
 import Edit from "../pages/Edit/Edit";
 
 const router = createBrowserRouter([
-    {
+  {
+    path: "/",
+    element: <Main></Main>,
+    errorElement: <Error></Error>,
+    children: [
+      {
         path: "/",
-        element: <Main></Main>,
-        errorElement: <Error></Error>,
-        children: [
-            {
-                path: '/',
-                element: <Home></Home>
-            },
-            {
-                path: 'details/:id',
-                element: <PrivateRoute><SingleDetails></SingleDetails></PrivateRoute>,
-                loader: ({ params }) => fetch(`https://toys-project-server.vercel.app/allToys/${params.id}`)
-            },
-            {
-                path: 'addToy',
-                element: <PrivateRoute><AddToy></AddToy></PrivateRoute>,
-            },
-            {
-                path: '/toyUpdate/:id',
-                element: <Edit></Edit>,
-            },
-            {
-                path: 'allToys',
-                element: <AllToys></AllToys>
-            },
-            {
-                path: 'myToys',
-                element: <PrivateRoute><MyToys></MyToys></PrivateRoute>,
-            },
-            {
-                path: 'blog',
-                element: <Blog></Blog>
-            },
-            {
-                path: 'login',
-                element: <Login></Login>
-            },
-            {
-                path: 'signup',
-                element: <SignUp></SignUp>
-            }
-        ]
-    }
-])
+        element: <Home></Home>,
+      },
+      {
+        path: "details/:id",
+        element: (
+          <PrivateRoute>
+            <SingleDetails></SingleDetails>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/allToys/${params.id}`),
+      },
+      {
+        path: "addToy",
+        element: (
+          <PrivateRoute>
+            <AddToy></AddToy>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/toyUpdate/:id",
+        element: <Edit></Edit>,
+      },
+      {
+        path: "allToys",
+        element: <AllToys></AllToys>,
+      },
+      {
+        path: "myToys",
+        element: (
+          <PrivateRoute>
+            <MyToys></MyToys>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "blog",
+        element: <Blog></Blog>,
+      },
+      {
+        path: "login",
+        element: <Login></Login>,
+      },
+      {
+        path: "signup",
+        element: <SignUp></SignUp>,
+      },
+    ],
+  },
+]);
 
 export default router;
